@@ -1,0 +1,11 @@
+@import "styles/constants";
+
+.row {
+  @extend %table-data-row;
+  height: 64px;
+  padding: 12px 10px;
+
+  &__created {
+    @extend %flex-column;
+  }
+}

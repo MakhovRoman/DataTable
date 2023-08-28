@@ -18,6 +18,7 @@
 
   &-item {
     text-transform: uppercase;
+    user-select: none;
 
     &_right {
       justify-self: right;

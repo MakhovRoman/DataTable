@@ -8,7 +8,7 @@ $brdr: 6px;
 %table-data-row {
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 16px 36px 160px 238px 70px repeat(3, 100px);
+  grid-template-columns: 16px 36px repeat(3, 1fr);
   grid-column-gap: 20px;
   align-items: center;
 }
