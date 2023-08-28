@@ -1,0 +1,26 @@
+@import "styles/constants";
+
+.header__bot {
+  height: 40px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+
+  @include set-font-size(11px, 16px, 600);
+  letter-spacing: 0.44px;
+  color: black;
+
+  &-container {
+    height: 16px;
+    width: 100%;
+    @extend %table-data-row;
+  }
+
+  &-item {
+    text-transform: uppercase;
+
+    &_right {
+      justify-self: right;
+    }
+  }
+}

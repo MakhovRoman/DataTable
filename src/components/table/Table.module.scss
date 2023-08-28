@@ -1,0 +1,6 @@
+@import "styles/constants";
+
+.table {
+  @extend %flex-column;
+  border-radius: $brdr;
+}

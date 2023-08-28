@@ -1,0 +1,21 @@
+.sort {
+  user-select: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  gap: 2px;
+
+  &_revert {
+    transform: rotateX(180deg);
+  }
+
+  &__icon {
+    display: flex;
+  }
+
+  &__label {
+    text-transform: uppercase;
+  }
+}

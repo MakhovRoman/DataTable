@@ -1,0 +1,63 @@
+@import "styles/reset";
+@import "styles/fonts";
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkBox {
+  display: block;
+  position: relative;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+
+    &:checked + .checkBox__checkmark {
+      background-color: unset;
+      box-shadow: none;
+      width: 26px;
+      height: 26px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -2.5px;
+        left: -5px;
+        width: 100%;
+        height: 100%;
+        background-image: url("assets/checkbox.svg");
+        background-position: center center;
+        background-size: auto;
+      }
+    }
+  }
+
+  &__checkmark {
+    position: absolute;
+    top: -8px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 2px 5px 0px rgba(89, 96, 120, 0.10), 0px 0px 0px 1px rgba(70, 79, 96, 0.16), 0px 1px 1px 0px rgba(0, 0, 0, 0.10);
+  }
+}

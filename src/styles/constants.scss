@@ -1,0 +1,24 @@
+$brdr: 6px;
+
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+%table-data-row {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 16px 36px 160px 238px 70px repeat(3, 100px);
+  grid-column-gap: 20px;
+  align-items: center;
+}
+
+@mixin set-border($thickness, $color) {
+  border: $thickness solid $color;
+}
+
+@mixin set-font-size($font-size, $line-height, $font-weight:400) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}
