@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 
 import { ReactComponent as SortActiveIcon } from 'assets/column-sorting-active.svg';
 import { ReactComponent as SortDisableIcon } from 'assets/column-sorting-disable.svg';
 
 import styles from "./SortIcon.module.scss";
 import clsx from 'clsx';
+import { useAppDispatch, useAppSelector } from 'src/services/hooks';
+import { selectSort, setSortParam } from 'src/services/slices/sortSlilce';
 
 type TSortIcon = {
   className?: string,
@@ -16,7 +18,18 @@ export const SortIcon = ({
   label,
 }: TSortIcon):JSX.Element => {
   const [isRevert, setIsRevert] = React.useState(false);
-  const handleClick = () => setIsRevert(!isRevert);
+  const sortField = useAppSelector(selectSort);
+
+  const dispatch = useAppDispatch();
+
+  const handleClick = (e: SyntheticEvent) => {
+    const id = e.currentTarget.id;
+
+    sortField.param === id && setIsRevert(!isRevert);
+
+    dispatch(setSortParam(id));
+
+  };
 
   return (
     <div
@@ -24,15 +37,21 @@ export const SortIcon = ({
         styles.sort,
         className && className
       )}
-      onClick={handleClick}
+      onClick={(e) => handleClick(e)}
+      id={label}
     >
       <span className={styles.sort__label}>{label}</span>
       <div className={styles.sort__icon}>
-        <SortActiveIcon
-          className={clsx(
-            isRevert && styles.sort_revert
-          )}
-        />
+        {
+          sortField.param === label ?
+          <SortActiveIcon
+            className={clsx(
+              isRevert && styles.sort_revert
+            )}
+          />
+          :
+          <SortDisableIcon />
+        }
       </div>
     </div>
   )

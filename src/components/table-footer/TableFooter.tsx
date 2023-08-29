@@ -33,6 +33,7 @@ export const TableFooter = () => {
     dispatch(setCurrentPage(current))
   }
 
+  // TODO: перенести это в слайсы
   const incrementPage = () => {
     if (current < (pagination.totalPages as number)) {
       setCurrent(current + 1)
@@ -40,6 +41,7 @@ export const TableFooter = () => {
     }
   }
 
+  // TODO: перенести это в слайсы
   const decrementPage = () => {
     if(current > 1) {
       setCurrent(current - 1)
