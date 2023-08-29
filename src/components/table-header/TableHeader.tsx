@@ -2,16 +2,26 @@ import styles from "./TableHeader.module.scss";
 import { ReactComponent as FilterIcon } from 'assets/filter.svg';
 import { ReactComponent as AddIcon } from 'assets/add.svg';
 import { TableHeaderBot } from "../table-header-bot/TableHeaderBot";
-import { useAppDispatch } from "src/services/hooks";
+import { useAppDispatch, useAppSelector } from "src/services/hooks";
 import React from "react";
 import { setEndpoint } from "src/services/slices/endpointSlice";
+import { selectSort, setSortParam } from "src/services/slices/sortSlilce";
 
 export const TableHeader = ():JSX.Element => {
   const dispatch = useAppDispatch();
+  const sort = useAppSelector(selectSort);
+
   const handlerSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const currentEndpoint = e.currentTarget.value;
 
     dispatch(setEndpoint(currentEndpoint));
+
+    if (sort.param === "Status") {
+      dispatch(setSortParam("Type"))
+    } else if (sort.param === "Type") {
+      dispatch(setSortParam("Status"))
+    }
+
   }
 
   return (

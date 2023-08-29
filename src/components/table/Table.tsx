@@ -11,7 +11,6 @@ type TProps = Record<string, any>
 
 export const Table = ({data}: TProps):JSX.Element => {
   const mock = data?.results || data;
-  console.log(mock)
   const sort = useAppSelector(selectSort);
 
   return (

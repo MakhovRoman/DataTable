@@ -28,7 +28,18 @@ export const TableFooter = () => {
   }
 
   const handlerChangePage = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const current = e.currentTarget.value;
+    const current = +e.currentTarget.value;
+
+    // if (current < 1) {
+    //   return false
+    // } else if (current > +pagination.totalPages) {
+    //   return false
+    // } else if (isNaN(current)) {
+    //   return false
+    // }
+
+    if (current < 1 && current > +pagination.totalPages) return false;
+
     setCurrent(+current);
     dispatch(setCurrentPage(current))
   }
@@ -77,6 +88,8 @@ export const TableFooter = () => {
             <input
               type="text"
               value={current}
+              min={1}
+              max={pagination.totalPages as number}
               onChange={(e) => handlerChangePage(e)}
             /> / {pagination.totalPages}
           </div>

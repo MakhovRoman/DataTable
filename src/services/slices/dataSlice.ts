@@ -3,7 +3,9 @@ import { RootState } from "../store";
 import { API } from "../api";
 
 const initialState = {
-  list: null
+  list: null,
+  isLoading: false,
+  isError: false
 }
 
 export const dataThunk = {
@@ -23,8 +25,23 @@ export const dataSlice = createSlice({
     setData: (state, action) => {
       state.list = action.payload
     }
+  },
+  extraReducers: (builder) => {
+    builder.addCase(dataThunk.load.pending, (state) => {
+      state.isLoading = true;
+      state.isError = false;
+    }),
+    builder.addCase(dataThunk.load.fulfilled, (state) => {
+      state.isLoading = false;
+      state.isError = false;
+    }),
+    builder.addCase(dataThunk.load.rejected, (state) => {
+      state.isLoading = false;
+      state.isError = true;
+    })
   }
 });
 
 export const selectData = (state: RootState) => state.data.list;
+export const selectIsLoading = (state: RootState) => state.data.isLoading;
 export const { setData } = dataSlice.actions;
