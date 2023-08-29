@@ -22,7 +22,9 @@ export const TableFooter = () => {
 
   const handlerSelect = async (e: React.ChangeEvent<HTMLSelectElement>) => {
     const current = e.currentTarget.value;
+    setCurrent(1);
     dispatch(setPerPage(current));
+    dispatch(setCurrentPage(1));
   }
 
   const handlerChangePage = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -74,9 +76,7 @@ export const TableFooter = () => {
               type="text"
               value={current}
               onChange={(e) => handlerChangePage(e)}
-            />
-            /
-            {pagination.totalPages}
+            /> / {pagination.totalPages}
           </div>
           <button
             onClick={incrementPage}

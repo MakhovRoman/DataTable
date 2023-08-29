@@ -40,6 +40,8 @@
       & input {
         width: 15px;
         @include set-font-size(12px, 18px, 500);
+        text-align: right;
+
       }
     }
   }
