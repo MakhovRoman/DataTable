@@ -30,9 +30,14 @@ export const paginationSlice = createSlice({
       state.currentRange = `${min}-${max}`;
       state.queryParams = query;
       state.totalPages = totalPages;
+    },
+    setTotalRow: (state, action) => {
+      state.totalRows = action.payload;
+      const [, , , totalPages] = setQuery(state.currentPage, action.payload, state.perPage);
+      state.totalPages = totalPages;
     }
   }
 });
 
 export const selectPagination = (state:RootState) => state.pagination;
-export const { setPerPage, setCurrentPage } = paginationSlice.actions;
+export const { setPerPage, setCurrentPage, setTotalRow } = paginationSlice.actions;
