@@ -1,11 +1,23 @@
 @import "styles/constants";
+@import "styles/colors";
 
 .row {
   @extend %table-data-row;
   height: 64px;
   padding: 12px 10px;
 
+  @include set-font-size(14px, 16px);
+
   &__created {
     @extend %flex-column;
+    @include set-font-size(11px, 13px);
+
+    span + span {
+      margin-top: 5px;
+    }
+  }
+
+  &:nth-child(odd) {
+    background-color: $bgc-header;
   }
 }

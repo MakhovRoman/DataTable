@@ -1,3 +1,4 @@
+import { TableFooter } from "../table-footer/TableFooter";
 import { TableHeader } from "../table-header/TableHeader";
 import { TableRow } from "../table-row/TableRow";
 import styles from "./Table.module.scss";
@@ -25,6 +26,7 @@ export const Table = ({data}: TProps):JSX.Element => {
           )
         })
       }
+      <TableFooter />
     </div>
   )
 }

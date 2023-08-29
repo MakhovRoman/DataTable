@@ -28,7 +28,7 @@ export const TableHeader = ():JSX.Element => {
         <select
           name="api"
           id="api"
-          className={styles.header__api}
+          className="select"
           onChange={(e) => handlerSelect(e)}
         >
           <option value="LOCATION">API Location</option>
