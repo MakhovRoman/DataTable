@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
 const initialState = {
-  param: "#"
+  param: "id",
+  isRevert: false
 }
 
 export const sortSlice = createSlice({
@@ -11,9 +12,12 @@ export const sortSlice = createSlice({
   reducers: {
     setSortParam: (state, action) => {
       state.param = action.payload
+    },
+    setRevert: (state, action) => {
+      state.isRevert = action.payload
     }
   }
 })
 
 export const selectSort = (state: RootState) => state.sort;
-export const { setSortParam } = sortSlice.actions;
+export const { setSortParam, setRevert } = sortSlice.actions;

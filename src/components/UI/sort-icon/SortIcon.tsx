@@ -6,7 +6,7 @@ import { ReactComponent as SortDisableIcon } from 'assets/column-sorting-disable
 import styles from "./SortIcon.module.scss";
 import clsx from 'clsx';
 import { useAppDispatch, useAppSelector } from 'src/services/hooks';
-import { selectSort, setSortParam } from 'src/services/slices/sortSlilce';
+import { selectSort, setRevert, setSortParam } from 'src/services/slices/sortSlilce';
 
 type TSortIcon = {
   className?: string,
@@ -22,13 +22,17 @@ export const SortIcon = ({
 
   const dispatch = useAppDispatch();
 
+  const handleSort = () => {
+    setIsRevert(!isRevert);
+    dispatch(setRevert(!isRevert));
+  }
+
   const handleClick = (e: SyntheticEvent) => {
     const id = e.currentTarget.id;
 
-    sortField.param === id && setIsRevert(!isRevert);
+    sortField.param === id ? handleSort() : dispatch(setRevert(false));
 
     dispatch(setSortParam(id));
-
   };
 
   return (

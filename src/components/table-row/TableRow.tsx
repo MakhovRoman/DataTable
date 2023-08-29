@@ -5,7 +5,8 @@ import styles from "./TableRow.module.scss";
 type TTableRow = {
   id: string,
   name: string,
-  type: string,
+  type?: string,
+  status?: string,
   created: string,
 }
 
@@ -14,6 +15,7 @@ export const TableRow = ({
   name,
   type,
   created,
+  status
 }: TTableRow): JSX.Element => {
   const {day, time} = dateTransform(created);
 
@@ -22,7 +24,7 @@ export const TableRow = ({
       <CheckBox id={id}/>
       <div>{id}</div>
       <div>{name}</div>
-      <div>{type}</div>
+      <div>{type ? type : status}</div>
       <div className={styles.row__created}>
         <span>{day}</span>
         <span>{time}</span>
