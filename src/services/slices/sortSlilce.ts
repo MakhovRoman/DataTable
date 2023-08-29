@@ -3,7 +3,7 @@ import { RootState } from "../store";
 
 const initialState = {
   param: "id",
-  isRevert: false
+  isRevert: false,
 }
 
 export const sortSlice = createSlice({
