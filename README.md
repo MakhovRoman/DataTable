@@ -13,7 +13,7 @@
 - фильтрация отображаемых данных по выбранному параметру
 - лоадер
 
-- ## Deploy
+## Deploy
 
 [![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)]([https://todo-8om2.onrender.com/](https://data-table-20ei.onrender.com/))
 
@@ -36,3 +36,6 @@ npm run dev
 ```
 npm run lint
 ```
+## Stack
+
+![My Skills](https://skillicons.dev/icons?i=html,sass,js,ts,react,redux,docker,vite)
