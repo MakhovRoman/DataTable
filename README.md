@@ -19,5 +19,16 @@
 
 ```
 npm install
+npm run start
+```
+
+Запуск в режиме разработки
+```
 npm run dev
+```
+
+Запуск линтеров
+
+```
+npm run lint
 ```
