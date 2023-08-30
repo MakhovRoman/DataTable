@@ -13,6 +13,10 @@
 - фильтрация отображаемых данных по выбранному параметру
 - лоадер
 
+- ## Deploy
+
+[![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)]([https://todo-8om2.onrender.com/](https://data-table-20ei.onrender.com/))
+
 ## Scripts
 
 Запуск проекта:
