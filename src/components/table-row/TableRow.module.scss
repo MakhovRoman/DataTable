@@ -3,13 +3,15 @@
 
 .row {
   @extend %table-data-row;
-  height: 64px;
-  padding: 12px 10px;
 
   @include set-font-size(14px, 16px);
 
+  height: 64px;
+  padding: 12px 10px;
+
   &__created {
     @extend %flex-column;
+
     @include set-font-size(11px, 13px);
 
     span + span {

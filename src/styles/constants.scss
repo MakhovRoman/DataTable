@@ -7,9 +7,9 @@ $brdr: 6px;
 
 %table-data-row {
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 16px 36px repeat(3, 1fr);
   grid-column-gap: 20px;
+  grid-template-columns: 16px 36px repeat(3, 1fr);
+  grid-template-rows: 1fr;
   align-items: center;
 }
 
@@ -19,6 +19,6 @@ $brdr: 6px;
 
 @mixin set-font-size($font-size, $line-height, $font-weight:400) {
   font-size: $font-size;
-  line-height: $line-height;
   font-weight: $font-weight;
+  line-height: $line-height;
 }

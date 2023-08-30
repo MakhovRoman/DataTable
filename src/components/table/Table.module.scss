@@ -2,5 +2,6 @@
 
 .table {
   @extend %flex-column;
+
   border-radius: $brdr;
 }

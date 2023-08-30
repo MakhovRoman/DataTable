@@ -1,11 +1,10 @@
 .sort {
-  user-select: none;
   cursor: pointer;
+  user-select: none;
 
   display: flex;
-  align-items: center;
-
   gap: 2px;
+  align-items: center;
 
   &_revert {
     transform: rotateX(180deg);
