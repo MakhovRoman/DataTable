@@ -36,6 +36,13 @@ npm run dev
 ```
 npm run lint
 ```
+
+## TODO
+
+- [ ] улучшить типизацию
+- [ ] добавить минимальное время рендера лодера
+- [ ] поработать над декомпозицией
+
 ## Stack
 
 ![My Skills](https://skillicons.dev/icons?i=html,sass,js,ts,react,redux,docker,vite)
