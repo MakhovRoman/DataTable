@@ -1,6 +1,6 @@
 # Data Table
 
-### Тестовый проект по реализации загрузки данных из внешнего API
+### Проект по реализации загрузки данных из внешнего API
 
 ![screenshot](https://github.com/MakhovRoman/DataTable/assets/70774476/c1af43da-34a5-4d08-83d4-d9d90aeaea54)
 
@@ -36,6 +36,13 @@ npm run dev
 ```
 npm run lint
 ```
+
+## TODO
+
+- [ ] улучшить типизацию
+- [ ] добавить минимальное время рендера лодера
+- [ ] поработать над декомпозицией
+
 ## Stack
 
 ![My Skills](https://skillicons.dev/icons?i=html,sass,js,ts,react,redux,docker,vite)
